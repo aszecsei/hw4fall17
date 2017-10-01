@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
   resources :movies
   resources :users
+  match '/login', to: 'sessions#new', via: :get
+  match '/login_create', to: 'sessions#create', via: :post
+  match '/logout', to: 'sessions#destroy', via: :delete
   
   # Example resource route with options:
   #   resources :products do
